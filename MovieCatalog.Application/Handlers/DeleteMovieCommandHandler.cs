@@ -27,7 +27,7 @@ public class DeleteMovieCommandHandler : IRequestHandler<DeleteMovieCommand, boo
 
 		if (movie == null) return false;
 
-		await _movieRepository.DeleteMovie(request.Id);
+		await _movieRepository.DeleteMovie(movie);
 
 		return true;
 	}

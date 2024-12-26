@@ -2,6 +2,7 @@
 using MediatR;
 using MovieCatalog.Application.Dto;
 using MovieCatalog.Domain.Entities;
+using MovieCatalog.Domain.Enums;
 using System.Linq.Expressions;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
@@ -16,6 +17,7 @@ public class ListMoviesQuery : IRequest<IEnumerable<MovieListDto>>
     public DateTime? ReleasedAfter { get; set; }
     public int Skip { get; set; }
     public int Take { get; set; }
+    public SortBy? SortBy { get; set; }
 
     public Expression<Func<Movie, bool>> BuildFilter()
     {
