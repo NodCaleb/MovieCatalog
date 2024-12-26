@@ -1,9 +1,9 @@
 ﻿using MovieCatalog.Domain.Enums;
 using MovieCatalog.Domain.ValueObjects;
 
-namespace MovieCatalog.Domain.Entities;
+namespace MovieCatalog.Infrastructure.Data.Seed;
 
-public class Movie
+internal class MovieData
 {
     public int Id { get; set; }
     public string Title { get; set; }
@@ -11,7 +11,8 @@ public class Movie
     public int Popularity { get; set; }
     public DateTime? ReleaseDate { get; set; }
     public Status Status { get; set; }
-    public Money? Budget { get; set; }
+    public decimal? Budget { get; set; }
+    public string? BudgetCurrency { get; set; }
     public string Homepage { get; set; }
     public float? Rating { get; set; }
     public string Genre { get; set; }
