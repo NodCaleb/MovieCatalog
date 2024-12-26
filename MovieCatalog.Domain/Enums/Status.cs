@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace MovieCatalog.Domain.Enums;
 
 public enum Status
 {
+	[Description("Upcoming")]
 	Upcoming,
+	[Description("Released")]
 	Released
 }

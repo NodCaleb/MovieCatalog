@@ -5,6 +5,7 @@ using MovieCatalog.Infrastructure.Data;
 using MovieCatalog.Infrastructure.Data.Seed;
 using MovieCatalog.Infrastructure.Extensions;
 using MovieCatalog.Infrastructure.Repositories;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,15 +25,18 @@ builder.Services.AddDbContext<MovieCatalogDbContext>(options =>
 builder.Services.AddAutoMapper(typeof(MovieMappingProfile));
 builder.Services.AddAutoMapper(typeof(MovieDataMappingProfile));
 builder.Services.AddScoped<IMovieRepository, MovieRepository>();
-builder.Services.AddMediatR(cfg => {
-	cfg.RegisterServicesFromAssembly(typeof(Program).Assembly);
+builder.Services.AddMediatR(config => {
+	config.RegisterServicesFromAssembly(Assembly.Load("MovieCatalog.Application"));
 });
 builder.Services.AddScoped<MovieCatalogDbContextInitializer>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(setup =>
+{
+	setup.SwaggerDoc("v1", new() { Title = "Movies catalog", Version = "v1" });
+});
 
 var app = builder.Build();
 

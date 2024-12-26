@@ -6,7 +6,7 @@ namespace MovieCatalog.Domain.Interfaces;
 
 public interface IMovieRepository
 {
-	Task<IEnumerable<Movie>> ListMovies(Expression<Func<Movie, bool>> filter, int skip = 0, int take = 10, SortBy sortBy = SortBy.Default);
+	Task<IEnumerable<Movie>> ListMovies(Expression<Func<Movie, bool>> filter, int? skip, int? take, SortBy? sortBy);
 	Task<Movie?> GetMovie(int id);
 	Task AddMovie(Movie movie);
 	Task UpdateMovie(Movie movie);

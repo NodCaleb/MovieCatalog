@@ -5,5 +5,6 @@ public enum SortBy
 	Default,
 	Title,
 	Rating,
-	ReleaseDate
+	ReleaseDate,
+	Popularity
 }

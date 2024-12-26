@@ -21,7 +21,7 @@ public class ListMoviesQueryHandler : IRequestHandler<ListMoviesQuery, IEnumerab
 
 	public async Task<IEnumerable<MovieListDto>> Handle(ListMoviesQuery request, CancellationToken cancellationToken)
 	{
-		var movies = await _movieRepository.ListMovies(request.BuildFilter(), request.Skip, request.Take);
+		var movies = await _movieRepository.ListMovies(request.BuildFilter(), request.Skip, request.Take, request.SortBy);
 
 		return movies.Select(m => _mapper.Map<MovieListDto>(m));
 	}

@@ -33,7 +33,7 @@ public class MovieRepository : IMovieRepository
 		return await _context.Movies.FindAsync(id);
 	}
 
-	public async Task<IEnumerable<Movie>> ListMovies(Expression<Func<Movie, bool>> filter, int skip = 0, int take = 10, SortBy sortBy = SortBy.Default)
+	public async Task<IEnumerable<Movie>> ListMovies(Expression<Func<Movie, bool>> filter, int? skip, int? take, SortBy? sortBy)
 	{
 		var query = _context.Movies.Where(filter).AsNoTracking();
 
@@ -48,12 +48,18 @@ public class MovieRepository : IMovieRepository
 			case SortBy.ReleaseDate:
 				query = query.OrderByDescending(m => m.ReleaseDate);
 				break;
+			case SortBy.Popularity:
+				query = query.OrderBy(m => m.Popularity);
+				break;
 			default:
 				query = query.OrderBy(m => m.Id);
 				break;
 		}
 
-		return await query.Skip(skip).Take(take).ToListAsync();
+		if (skip.HasValue) query = query.Skip(skip.Value);
+		if (take.HasValue) query = query.Take(take.Value);
+
+		return await query.ToListAsync();
 	}
 
 	public async Task UpdateMovie(Movie movie)

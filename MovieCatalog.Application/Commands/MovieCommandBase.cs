@@ -1,16 +1,20 @@
 ﻿using MovieCatalog.Domain.Enums;
 using MovieCatalog.Domain.ValueObjects;
 
-namespace MovieCatalog.Application.Dto;
+namespace MovieCatalog.Application.Commands;
 
-public class MovieDetailsDto : MovieListDto
+public abstract class MovieCommandBase
 {
-	public string Status { get; set; }
+	public string Title { get; set; }
+	public string Overview { get; set; }
+	public int Popularity { get; set; }
+	public DateTime? ReleaseDate { get; set; }
+	public Status Status { get; set; }
 	public Money? Budget { get; set; }
 	public string Homepage { get; set; }
-	public float? Rating { get; set; }
+	public float Rating { get; set; }
 	public string Genre { get; set; }
-	public int? Runtime { get; set; }
+	public int Runtime { get; set; }
 	public string Director { get; set; }
 	public string Writer { get; set; }
 	public string Language { get; set; }
