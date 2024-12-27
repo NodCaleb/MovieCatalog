@@ -1,10 +1,10 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>39606745-3cd4-4138-804e-9ad3ca30b03c</UserSecretsId>
+    <UserSecretsId>c3de1987-5d51-447f-96db-fed5af012a61</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
@@ -23,6 +23,11 @@
     <ProjectReference Include="..\MovieCatalog.Application\MovieCatalog.Application.csproj" />
     <ProjectReference Include="..\MovieCatalog.Domain\MovieCatalog.Domain.csproj" />
     <ProjectReference Include="..\MovieCatalog.Infrastructure\MovieCatalog.Infrastructure.csproj" />
+    <ProjectReference Include="..\MovieCatalog.ServiceDefaults\MovieCatalog.ServiceDefaults.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>

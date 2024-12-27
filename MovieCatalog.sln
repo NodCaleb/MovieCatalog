@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCatalog.Domain", "MovieCatalog.Domain\MovieCatalog.Domain.csproj", "{3B581870-7B7D-4195-961E-EA4C22AE4317}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieCatalog.Domain", "MovieCatalog.Domain\MovieCatalog.Domain.csproj", "{3B581870-7B7D-4195-961E-EA4C22AE4317}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCatalog.Application", "MovieCatalog.Application\MovieCatalog.Application.csproj", "{CEF234DD-28FE-4E2A-BE76-CE901988A289}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieCatalog.Application", "MovieCatalog.Application\MovieCatalog.Application.csproj", "{CEF234DD-28FE-4E2A-BE76-CE901988A289}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCatalog.Infrastructure", "MovieCatalog.Infrastructure\MovieCatalog.Infrastructure.csproj", "{005557B5-7B2A-4B0B-9E2E-7D4BEB81190E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieCatalog.Infrastructure", "MovieCatalog.Infrastructure\MovieCatalog.Infrastructure.csproj", "{005557B5-7B2A-4B0B-9E2E-7D4BEB81190E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCatalog.Api", "MovieCatalog.Api\MovieCatalog.Api.csproj", "{A4B587BD-C690-4CC6-9947-2CA8B9978234}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieCatalog.Api", "MovieCatalog.Api\MovieCatalog.Api.csproj", "{1DD58F3D-4550-4978-BA3A-B65B296A6061}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCatalog.AppHost", "MovieCatalog.AppHost\MovieCatalog.AppHost.csproj", "{70D29D5B-E988-4DF5-8824-488CB7511BDA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieCatalog.ServiceDefaults", "MovieCatalog.ServiceDefaults\MovieCatalog.ServiceDefaults.csproj", "{0AECB40E-A4EA-40AB-B6B0-7AA1400A266E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +33,18 @@ Global
 		{005557B5-7B2A-4B0B-9E2E-7D4BEB81190E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{005557B5-7B2A-4B0B-9E2E-7D4BEB81190E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{005557B5-7B2A-4B0B-9E2E-7D4BEB81190E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A4B587BD-C690-4CC6-9947-2CA8B9978234}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A4B587BD-C690-4CC6-9947-2CA8B9978234}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A4B587BD-C690-4CC6-9947-2CA8B9978234}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A4B587BD-C690-4CC6-9947-2CA8B9978234}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DD58F3D-4550-4978-BA3A-B65B296A6061}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DD58F3D-4550-4978-BA3A-B65B296A6061}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DD58F3D-4550-4978-BA3A-B65B296A6061}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DD58F3D-4550-4978-BA3A-B65B296A6061}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70D29D5B-E988-4DF5-8824-488CB7511BDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70D29D5B-E988-4DF5-8824-488CB7511BDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70D29D5B-E988-4DF5-8824-488CB7511BDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70D29D5B-E988-4DF5-8824-488CB7511BDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AECB40E-A4EA-40AB-B6B0-7AA1400A266E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AECB40E-A4EA-40AB-B6B0-7AA1400A266E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AECB40E-A4EA-40AB-B6B0-7AA1400A266E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AECB40E-A4EA-40AB-B6B0-7AA1400A266E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
