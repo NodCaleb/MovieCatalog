@@ -2,6 +2,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using MovieCatalog.Application.Handlers;
 using MovieCatalog.Application.MappingProfiles;
+using MovieCatalog.Application.Middleware;
 using MovieCatalog.Domain.Interfaces;
 using MovieCatalog.Infrastructure.Data;
 using MovieCatalog.Infrastructure.Data.Seed;
@@ -68,6 +69,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseMiddleware<ExceptionsHandler>();
 
 await app.InitializeDatabase();
 
