@@ -35,9 +35,12 @@ builder.Services.AddScoped<MovieCatalogDbContextInitializer>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(setup =>
+builder.Services.AddSwaggerGen(options =>
 {
-	setup.SwaggerDoc("v1", new() { Title = "Movies catalog", Version = "v1" });
+	options.SwaggerDoc("v1", new() { Title = "Movies catalog", Version = "v1" });
+
+	var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+	options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
 });
 
 var app = builder.Build();

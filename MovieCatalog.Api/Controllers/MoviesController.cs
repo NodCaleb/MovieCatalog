@@ -18,7 +18,7 @@ namespace MovieCatalog.Api.Controllers
 		}
 
 		/// <summary>
-		/// Get detailed information about a movie.
+		/// Get detailed information about a movie
 		/// </summary>
 		/// <param name="id">Movie id</param>
 		/// <response code="200">Returns movie details</response>
@@ -39,7 +39,10 @@ namespace MovieCatalog.Api.Controllers
 			return Ok(movie);
 		}
 
-
+		/// <summary>
+		/// Get list of movies
+		/// </summary>
+		/// <response code="200">Returns list of movies</response>
 		[HttpGet]
 		[ProducesResponseType(typeof(IEnumerable<MovieListDto>), StatusCodes.Status200OK)]
 		[Route("")]
@@ -48,8 +51,15 @@ namespace MovieCatalog.Api.Controllers
 			return Ok(await _mediator.Send(query));
 		}
 
+		/// <summary>
+		/// Add new movie to the catalog
+		/// </summary>
+		/// <param name="command"></param>
+		/// <response code="201">Returns response with new movie id</response>
+		/// <response code="400">In case of invalid data</response>
 		[HttpPost]
 		[ProducesResponseType(StatusCodes.Status201Created)]
+		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		[Route("")]
 		public async Task<IActionResult> AddMovie([FromBody] AddMovieCommand command)
 		{
@@ -58,8 +68,17 @@ namespace MovieCatalog.Api.Controllers
 			return CreatedAtAction(nameof(GetMovie), new { id }, null);
 		}
 
+		/// <summary>
+		/// Update existing movie details
+		/// </summary>
+		/// <param name="id">Movie id</param>
+		/// <response code="204">In case of successful update</response>
+		/// <response code="400">In case of invalid data</response>
+		/// <response code="404">If there is no movie with this id</response>
 		[HttpPut]
 		[ProducesResponseType(StatusCodes.Status204NoContent)]	
+		[ProducesResponseType(StatusCodes.Status400BadRequest)]
+		[ProducesResponseType(StatusCodes.Status404NotFound)]
 		[Route("{id}")]
 		public async Task<IActionResult> UpdateMovie(int id, [FromBody] UpdateMovieCommand command)
 		{
@@ -72,8 +91,15 @@ namespace MovieCatalog.Api.Controllers
 			return NoContent();
 		}
 
+		/// <summary>
+		/// Delete movie from the catalog
+		/// </summary>
+		/// <param name="id">Movie id</param>
+		/// <response code="204">In case of successful deletion</response>
+		/// <response code="404">If there is no movie with this id</response>
 		[HttpDelete]
 		[ProducesResponseType(StatusCodes.Status204NoContent)]
+		[ProducesResponseType(StatusCodes.Status404NotFound)]
 		[Route("{id}")]
 		public async Task<IActionResult> DeleteMovie(int id)
 		{
