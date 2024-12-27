@@ -11,10 +11,12 @@ namespace MovieCatalog.Api.Controllers
 	public class MoviesController : ControllerBase
 	{
 		private readonly IMediator _mediator;
+		private readonly ILogger<MoviesController> _logger;
 
-		public MoviesController(IMediator mediator)
+		public MoviesController(IMediator mediator, ILogger<MoviesController> logger)
 		{
 			_mediator = mediator;
+			_logger = logger;
 		}
 
 		/// <summary>

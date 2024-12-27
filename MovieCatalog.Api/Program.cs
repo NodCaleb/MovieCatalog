@@ -31,6 +31,10 @@ builder.Services.AddMediatR(config => {
 	config.RegisterServicesFromAssembly(Assembly.Load("MovieCatalog.Application"));
 });
 builder.Services.AddScoped<MovieCatalogDbContextInitializer>();
+builder.Services.AddDefaultAWSOptions(builder.Configuration.GetAWSOptions());
+builder.Logging.ClearProviders();
+builder.Logging.AddAWSProvider(builder.Configuration.GetAWSLoggingConfigSection());
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
