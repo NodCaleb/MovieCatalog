@@ -1,4 +1,6 @@
+using MediatR;
 using Microsoft.EntityFrameworkCore;
+using MovieCatalog.Application.Handlers;
 using MovieCatalog.Application.MappingProfiles;
 using MovieCatalog.Domain.Interfaces;
 using MovieCatalog.Infrastructure.Data;
@@ -19,6 +21,10 @@ var configuration = builder.Configuration
 builder.AddServiceDefaults();
 
 // Add services to the container.
+builder.Services.AddDefaultAWSOptions(builder.Configuration.GetAWSOptions());
+builder.Logging.ClearProviders();
+builder.Logging.AddAWSProvider(builder.Configuration.GetAWSLoggingConfigSection());
+
 builder.Services.AddDbContext<MovieCatalogDbContext>(options =>
 {
 	options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
@@ -27,14 +33,13 @@ builder.Services.AddDbContext<MovieCatalogDbContext>(options =>
 builder.Services.AddAutoMapper(typeof(MovieMappingProfile));
 builder.Services.AddAutoMapper(typeof(MovieDataMappingProfile));
 builder.Services.AddScoped<IMovieRepository, MovieRepository>();
+
 builder.Services.AddMediatR(config => {
 	config.RegisterServicesFromAssembly(Assembly.Load("MovieCatalog.Application"));
 });
-builder.Services.AddScoped<MovieCatalogDbContextInitializer>();
-builder.Services.AddDefaultAWSOptions(builder.Configuration.GetAWSOptions());
-builder.Logging.ClearProviders();
-builder.Logging.AddAWSProvider(builder.Configuration.GetAWSLoggingConfigSection());
+builder.Services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
 
+builder.Services.AddScoped<MovieCatalogDbContextInitializer>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
