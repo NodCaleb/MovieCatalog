@@ -34,11 +34,14 @@ builder.Services.AddDbContext<MovieCatalogDbContext>(options =>
 builder.Services.AddAutoMapper(typeof(MovieMappingProfile));
 builder.Services.AddAutoMapper(typeof(MovieDataMappingProfile));
 builder.Services.AddScoped<IMovieRepository, MovieRepository>();
+builder.Services.AddMemoryCache();
 
 builder.Services.AddMediatR(config => {
 	config.RegisterServicesFromAssembly(Assembly.Load("MovieCatalog.Application"));
 });
 builder.Services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
+builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(CachingBehavior<,>));
+
 
 builder.Services.AddScoped<MovieCatalogDbContextInitializer>();
 

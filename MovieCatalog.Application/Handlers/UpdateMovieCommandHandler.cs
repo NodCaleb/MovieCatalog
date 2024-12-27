@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Microsoft.Extensions.Caching.Memory;
 using MovieCatalog.Application.Commands;
 using MovieCatalog.Domain.Interfaces;
 
@@ -9,11 +10,13 @@ public class UpdateMovieCommandHandler : IRequestHandler<UpdateMovieCommand, boo
 {
 	private readonly IMovieRepository _movieRepository;
 	private readonly IMapper _mapper;
+	private readonly IMemoryCache _cache;
 
-	public UpdateMovieCommandHandler(IMovieRepository movieRepository, IMapper mapper)
+	public UpdateMovieCommandHandler(IMovieRepository movieRepository, IMapper mapper, IMemoryCache cache)
 	{
 		_movieRepository = movieRepository;
 		_mapper = mapper;
+		_cache = cache;
 	}
 
 	public async Task<bool> Handle(UpdateMovieCommand request, CancellationToken cancellationToken)
@@ -25,6 +28,8 @@ public class UpdateMovieCommandHandler : IRequestHandler<UpdateMovieCommand, boo
 		movie = _mapper.Map(request, movie);
 
 		await _movieRepository.UpdateMovie(movie);
+
+		_cache.Remove($"Movie-{request.Id}");
 
 		return true;
 	}
