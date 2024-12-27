@@ -35,7 +35,7 @@ namespace MovieCatalog.Api.Controllers
 
 			if (movie == null)
 			{
-				return NotFound();
+				return NotFound(new { message = $"Movie with ID {id} not found or not accessible", statusCode = 404 });
 			}
 
 			return Ok(movie);
@@ -87,7 +87,7 @@ namespace MovieCatalog.Api.Controllers
 			command.Id = id;
 			if (!await _mediator.Send(command))
 			{
-				return NotFound();
+				return NotFound(new { message = $"Movie with ID {id} not found or not accessible", statusCode = 404 });
 			}
 
 			return NoContent();
@@ -107,7 +107,7 @@ namespace MovieCatalog.Api.Controllers
 		{
 			if (!await _mediator.Send(new DeleteMovieCommand { Id = id }))
 			{
-				return NotFound();
+				return NotFound(new { message = $"Movie with ID {id} not found or not accessible", statusCode = 404 });
 			}
 
 			return NoContent();

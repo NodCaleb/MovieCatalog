@@ -16,13 +16,18 @@ public class LoggingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, 
 	{
 		try
 		{
-			_logger.LogTrace($"Before execution for {typeof(TRequest).Name}");
+			_logger.LogTrace($"Before execution of {typeof(TRequest).Name}");
 
 			return await next();
 		}
+		catch (Exception ex)
+		{
+			_logger.LogError(ex, $"Error during execution of {typeof(TRequest).Name}");
+			throw;
+		}
 		finally
 		{
-			_logger.LogTrace($"After execution for {typeof(TRequest).Name}");
+			_logger.LogTrace($"After execution of {typeof(TRequest).Name}");
 		}
 	}
 }
