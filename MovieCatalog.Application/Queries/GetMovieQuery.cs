@@ -4,7 +4,7 @@ using MovieCatalog.Application.Interfaces;
 
 namespace MovieCatalog.Application.Queries;
 
-public class GetMovieQuery : IRequest<MovieDetailsDto>, ICachableRequest
+public class GetMovieQuery : IRequest<MovieDetailsDto>, ICachableQuery
 {
 	public int Id { get; set; }
 

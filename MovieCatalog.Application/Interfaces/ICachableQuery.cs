@@ -1,6 +1,6 @@
 ﻿namespace MovieCatalog.Application.Interfaces;
 
-public interface ICachableRequest
+public interface ICachableQuery
 {
 	string CacheKey { get; }
 	TimeSpan CacheDuration { get; }

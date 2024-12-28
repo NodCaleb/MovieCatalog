@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieCatalog.Infrastructure
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieCatalog.Api", "MovieCatalog.Api\MovieCatalog.Api.csproj", "{1DD58F3D-4550-4978-BA3A-B65B296A6061}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCatalog.AppHost", "MovieCatalog.AppHost\MovieCatalog.AppHost.csproj", "{70D29D5B-E988-4DF5-8824-488CB7511BDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieCatalog.AppHost", "MovieCatalog.AppHost\MovieCatalog.AppHost.csproj", "{70D29D5B-E988-4DF5-8824-488CB7511BDA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieCatalog.ServiceDefaults", "MovieCatalog.ServiceDefaults\MovieCatalog.ServiceDefaults.csproj", "{0AECB40E-A4EA-40AB-B6B0-7AA1400A266E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCatalog.Tests", "MovieCatalog.Tests\MovieCatalog.Tests.csproj", "{17122382-075B-4CAB-BEF4-7538B39D56A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{0AECB40E-A4EA-40AB-B6B0-7AA1400A266E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AECB40E-A4EA-40AB-B6B0-7AA1400A266E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AECB40E-A4EA-40AB-B6B0-7AA1400A266E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17122382-075B-4CAB-BEF4-7538B39D56A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17122382-075B-4CAB-BEF4-7538B39D56A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17122382-075B-4CAB-BEF4-7538B39D56A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17122382-075B-4CAB-BEF4-7538B39D56A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,9 +2,7 @@
 using MediatR;
 using MovieCatalog.Application.Dto;
 using MovieCatalog.Application.Queries;
-using MovieCatalog.Domain.Entities;
 using MovieCatalog.Domain.Interfaces;
-using System.Linq.Expressions;
 
 namespace MovieCatalog.Application.Handlers;
 
