@@ -5,6 +5,9 @@ using MovieCatalog.Domain.Interfaces;
 
 namespace MovieCatalog.Application.Handlers;
 
+/// <summary>
+/// MediatR Handler for the UpdateMovieCommand
+/// </summary>
 public class UpdateMovieCommandHandler : IRequestHandler<UpdateMovieCommand, bool>
 {
 	private readonly IMovieRepository _movieRepository;

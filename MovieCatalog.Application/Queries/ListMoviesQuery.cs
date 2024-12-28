@@ -7,6 +7,9 @@ using System.Linq.Expressions;
 
 namespace MovieCatalog.Application.Queries;
 
+/// <summary>
+/// Command to list movies from the catalog
+/// </summary>
 public class ListMoviesQuery : IRequest<IEnumerable<MovieListDto>>
 {
     public string? TitleSearch { get; set; }

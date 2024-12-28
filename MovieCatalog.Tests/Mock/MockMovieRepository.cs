@@ -5,6 +5,9 @@ using System.Linq.Expressions;
 
 namespace MovieCatalog.Tests.Mock;
 
+/// <summary>
+/// Class that mocks the IMovieRepository interface for testing purposes
+/// </summary>
 internal class MockMovieRepository : IMovieRepository
 {
 	public async Task AddMovie(Movie movie)

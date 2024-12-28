@@ -1,12 +1,15 @@
 ﻿using AutoMapper;
 using MovieCatalog.Application.Commands;
 using MovieCatalog.Application.Dto;
-using MovieCatalog.Application.Extensions;
 using MovieCatalog.Domain.Entities;
+using MovieCatalog.Domain.Extensions;
 using MovieCatalog.Domain.ValueObjects;
 
 namespace MovieCatalog.Application.MappingProfiles;
 
+/// <summary>
+/// Mapping profile for the Movie entity
+/// </summary>
 public class MovieMappingProfile : Profile
 {
     public MovieMappingProfile()

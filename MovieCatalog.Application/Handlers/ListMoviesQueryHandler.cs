@@ -6,6 +6,9 @@ using MovieCatalog.Domain.Interfaces;
 
 namespace MovieCatalog.Application.Handlers;
 
+/// <summary>
+/// MediatR Handler for the ListMoviesQuery
+/// </summary>
 public class ListMoviesQueryHandler : IRequestHandler<ListMoviesQuery, IEnumerable<MovieListDto>>
 {
 	private readonly IMovieRepository _movieRepository;

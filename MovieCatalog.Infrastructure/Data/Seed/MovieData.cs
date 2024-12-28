@@ -3,6 +3,9 @@ using MovieCatalog.Domain.ValueObjects;
 
 namespace MovieCatalog.Infrastructure.Data.Seed;
 
+/// <summary>
+/// Data transfer object to read movies data from JSON, used for seeding the database
+/// </summary>
 internal class MovieData
 {
     public int Id { get; set; }

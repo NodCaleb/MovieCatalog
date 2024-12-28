@@ -4,6 +4,9 @@ using MovieCatalog.Application.Commands;
 
 namespace MovieCatalog.Tests;
 
+/// <summary>
+/// Test class for the UpdateMovieCommand
+/// </summary>
 public class UpdateMovieCommandTest : TestBase
 {
 	[Fact]

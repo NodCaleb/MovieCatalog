@@ -4,6 +4,9 @@ using MovieCatalog.Domain.ValueObjects;
 
 namespace MovieCatalog.Infrastructure.Data.Seed;
 
+/// <summary>
+/// Mapping profile for the MovieData entity
+/// </summary>
 public class MovieDataMappingProfile : Profile
 {
 	public MovieDataMappingProfile()

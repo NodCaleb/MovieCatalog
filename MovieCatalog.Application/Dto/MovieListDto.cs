@@ -1,5 +1,8 @@
 ﻿namespace MovieCatalog.Application.Dto;
 
+/// <summary>
+/// Data transfer object with brief movie details, used for displaying list of movies
+/// </summary>
 public class MovieListDto
 {
 	public int Id { get; set; }

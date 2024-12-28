@@ -12,6 +12,7 @@ using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//Reading configuration from appsettings.json, environment variables, user secrets and command line arguments
 var configuration = builder.Configuration
 	.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
 	.AddEnvironmentVariables()
@@ -21,7 +22,7 @@ var configuration = builder.Configuration
 
 builder.AddServiceDefaults();
 
-// Add services to the container.
+// Adding services to the container.
 builder.Services.AddDefaultAWSOptions(builder.Configuration.GetAWSOptions());
 builder.Logging.ClearProviders();
 builder.Logging.AddAWSProvider(builder.Configuration.GetAWSLoggingConfigSection());
@@ -46,7 +47,8 @@ builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(CachingBehavi
 builder.Services.AddScoped<MovieCatalogDbContextInitializer>();
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+// Adding Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
@@ -68,13 +70,13 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
+//Adding exception handling middleware
 app.UseMiddleware<ExceptionsHandler>();
 
+// Initialize the database
 await app.InitializeDatabase();
 
 app.Run();

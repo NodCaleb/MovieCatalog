@@ -3,6 +3,11 @@ using Microsoft.Extensions.Logging;
 
 namespace MovieCatalog.Application.Pipeline;
 
+/// <summary>
+/// Pipeline behavior for trace logging queries and commands execution and log exceptions if they occur
+/// </summary>
+/// <typeparam name="TRequest"></typeparam>
+/// <typeparam name="TResponse"></typeparam>
 public class LoggingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
 {
     private readonly ILogger<TRequest> _logger;

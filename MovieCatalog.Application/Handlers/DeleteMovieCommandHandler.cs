@@ -5,6 +5,9 @@ using MovieCatalog.Domain.Interfaces;
 
 namespace MovieCatalog.Application.Handlers;
 
+/// <summary>
+/// MediatR Handler for the DeleteMovieCommand
+/// </summary>
 public class DeleteMovieCommandHandler : IRequestHandler<DeleteMovieCommand, bool>
 {
 	private readonly IMovieRepository _movieRepository;

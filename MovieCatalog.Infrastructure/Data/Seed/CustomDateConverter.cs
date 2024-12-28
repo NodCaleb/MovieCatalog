@@ -3,6 +3,9 @@ using System.Globalization;
 
 namespace MovieCatalog.Infrastructure.Data.Seed;
 
+/// <summary>
+/// Custom date converter for JSON serialization, works with the format "dd.MM.yyyy"
+/// </summary>
 public class CustomDateConverter : JsonConverter
 {
     private const string DateFormat = "dd.MM.yyyy";

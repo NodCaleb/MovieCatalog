@@ -2,6 +2,9 @@
 
 namespace MovieCatalog.Infrastructure.Extensions;
 
+/// <summary>
+/// Web application extensions for database initialization
+/// </summary>
 public static class InitializerExtensions
 {
 	public static async Task InitializeDatabase(this WebApplication app)

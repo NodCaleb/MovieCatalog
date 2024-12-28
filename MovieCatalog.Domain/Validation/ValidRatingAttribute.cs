@@ -2,6 +2,10 @@
 
 namespace MovieCatalog.Domain.Validation;
 
+/// <summary>
+/// Custom validation attribute to validate the rating of a movie
+/// Rating must be between 0 and 10
+/// </summary>
 public class ValidRatingAttribute : ValidationAttribute
 {
 	protected override ValidationResult IsValid(object value, ValidationContext validationContext)

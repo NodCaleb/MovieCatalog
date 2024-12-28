@@ -6,6 +6,9 @@ using System.Reflection;
 
 namespace MovieCatalog.Tests;
 
+/// <summary>
+/// Base class for tests that sets up the service provider
+/// </summary>
 public abstract class TestBase
 {
 	protected readonly ServiceProvider ServiceProvider;

@@ -7,6 +7,9 @@ using System.Linq.Expressions;
 
 namespace MovieCatalog.Infrastructure.Repositories;
 
+/// <summary>
+/// Repository for movie entities to work with the database
+/// </summary>
 public class MovieRepository : IMovieRepository
 {
 	private readonly MovieCatalogDbContext _context;

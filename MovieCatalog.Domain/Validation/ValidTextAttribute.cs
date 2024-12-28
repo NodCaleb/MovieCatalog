@@ -2,6 +2,10 @@
 
 namespace MovieCatalog.Domain.Validation;
 
+/// <summary>
+/// Custom validation attribute to validate text fields
+/// Checks if the value is required and if it exceeds the max length
+/// </summary>
 public class ValidTextAttribute : ValidationAttribute
 {
 	private readonly bool _isRequired;

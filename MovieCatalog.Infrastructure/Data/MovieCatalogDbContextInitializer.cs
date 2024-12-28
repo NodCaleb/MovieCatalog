@@ -8,6 +8,9 @@ using System.Reflection;
 
 namespace MovieCatalog.Infrastructure.Data;
 
+/// <summary>
+/// Database context initializer, ensures that the database is created, migrations applied and seeded with initial data
+/// </summary>
 public class MovieCatalogDbContextInitializer
 {
 	private readonly ILogger<MovieCatalogDbContextInitializer> _logger;
@@ -25,7 +28,7 @@ public class MovieCatalogDbContextInitializer
 	{
 		try
 		{
-			if (_context.Database.EnsureCreated() || true)
+			if (_context.Database.EnsureCreated())
 			{
 				await SeedData();
 			}

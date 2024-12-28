@@ -6,6 +6,9 @@ using MovieCatalog.Domain.Interfaces;
 
 namespace MovieCatalog.Application.Handlers;
 
+/// <summary>
+/// MediatR Handler for the AddMovieCommand
+/// </summary>
 public class AddMovieCommandHandler : IRequestHandler<AddMovieCommand, int>
 {
 	private readonly IMovieRepository _movieRepository;

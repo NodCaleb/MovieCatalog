@@ -3,6 +3,9 @@ using MovieCatalog.Domain.ValueObjects;
 
 namespace MovieCatalog.Domain.Entities;
 
+/// <summary>
+/// Core entity for the entire solution
+/// </summary>
 public class Movie
 {
     public int Id { get; set; }

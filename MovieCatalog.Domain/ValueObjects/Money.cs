@@ -1,5 +1,8 @@
 ﻿namespace MovieCatalog.Domain.ValueObjects;
 
+/// <summary>
+/// Value object to represent money (used for budget)
+/// </summary>
 public class Money
 {
     public decimal Amount { get; private set; }

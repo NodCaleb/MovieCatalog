@@ -3,6 +3,9 @@ using MovieCatalog.Domain.ValueObjects;
 
 namespace MovieCatalog.Application.Dto;
 
+/// <summary>
+/// Data transfer object for detailed movie information, used for displaying single movie
+/// </summary>
 public class MovieDetailsDto : MovieListDto
 {
 	public string Status { get; set; }

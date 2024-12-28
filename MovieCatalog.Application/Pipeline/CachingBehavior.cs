@@ -4,6 +4,12 @@ using MovieCatalog.Application.Interfaces;
 
 namespace MovieCatalog.Application.Pipeline;
 
+/// <summary>
+/// Pipeline behavior to cache the response of a query or read from cache when possible
+/// And invalidate the cache when a command is executed
+/// </summary>
+/// <typeparam name="TRequest"></typeparam>
+/// <typeparam name="TResponse"></typeparam>
 public class CachingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     where TRequest : IRequest<TResponse>
 {

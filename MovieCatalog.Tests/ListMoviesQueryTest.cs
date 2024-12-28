@@ -4,6 +4,9 @@ using MovieCatalog.Application.Queries;
 
 namespace MovieCatalog.Tests;
 
+/// <summary>
+/// Test class for the ListMoviesQuery
+/// </summary>
 public class ListMoviesQueryTest : TestBase
 {
 	[Fact]

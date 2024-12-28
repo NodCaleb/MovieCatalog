@@ -1,5 +1,8 @@
 ﻿namespace MovieCatalog.Application.Middleware;
 
+/// <summary>
+/// Single point of failure for unhandled exceptions in the Web API
+/// </summary>
 public class ExceptionsHandler
 {
 	private readonly RequestDelegate _next;

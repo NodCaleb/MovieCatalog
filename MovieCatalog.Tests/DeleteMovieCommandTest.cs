@@ -4,6 +4,9 @@ using MovieCatalog.Application.Commands;
 
 namespace MovieCatalog.Tests;
 
+/// <summary>
+/// Test class for the DeleteMovieCommand
+/// </summary>
 public class DeleteMovieCommandTest : TestBase
 {
 	[Fact]

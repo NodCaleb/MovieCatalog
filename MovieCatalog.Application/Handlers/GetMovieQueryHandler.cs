@@ -6,6 +6,9 @@ using MovieCatalog.Domain.Interfaces;
 
 namespace MovieCatalog.Application.Handlers;
 
+/// <summary>
+/// MediatR Handler for the GetMovieQuery
+/// </summary>
 public class GetMovieQueryHandler : IRequestHandler<GetMovieQuery, MovieDetailsDto>
 {
 	private readonly IMovieRepository _movieRepository;

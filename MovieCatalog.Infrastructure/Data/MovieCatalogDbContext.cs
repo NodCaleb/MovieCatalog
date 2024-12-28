@@ -3,6 +3,9 @@ using MovieCatalog.Domain.Entities;
 
 namespace MovieCatalog.Infrastructure.Data;
 
+/// <summary>
+/// Database context for the movie catalog to work with MS SQL Server
+/// </summary>
 public class MovieCatalogDbContext : DbContext
 {
 	public DbSet<Movie> Movies { get; set; }

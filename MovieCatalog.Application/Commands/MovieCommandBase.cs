@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MovieCatalog.Application.Commands;
 
+/// <summary>
+/// Base class for movie adding and updating commands, containing all movie properties
+/// </summary>
 public abstract class MovieCommandBase
 {
 	[ValidText(isRequired: true, maxLength: 255)]
