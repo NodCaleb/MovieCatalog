@@ -1,5 +1,6 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging.ApplicationInsights;
 using MovieCatalog.Application.MappingProfiles;
 using MovieCatalog.Application.Middleware;
 using MovieCatalog.Application.Pipeline;
@@ -23,9 +24,14 @@ var configuration = builder.Configuration
 builder.AddServiceDefaults();
 
 // Adding services to the container.
-builder.Services.AddDefaultAWSOptions(builder.Configuration.GetAWSOptions());
 builder.Logging.ClearProviders();
-builder.Logging.AddAWSProvider(builder.Configuration.GetAWSLoggingConfigSection());
+builder.Logging.AddApplicationInsights(
+		configureTelemetryConfiguration: (config) =>
+			config.ConnectionString = builder.Configuration.GetConnectionString("ApplicationInsights"),
+			configureApplicationInsightsLoggerOptions: (options) => { }
+	);
+
+builder.Logging.AddFilter<ApplicationInsightsLoggerProvider>("movie-catalog", LogLevel.Information);
 
 builder.Services.AddDbContext<MovieCatalogDbContext>(options =>
 {
