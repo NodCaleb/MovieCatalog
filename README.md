@@ -11,6 +11,7 @@ Made as a test technical assignment.
 - [Testing](#testing)
 - [Configuring](#configuring)
 - [Running](#running)
+- [Health check](#health-check)
 - [Seeding database](#seeding-database)
 - [Demo](#demo)
 
@@ -45,7 +46,7 @@ All configuration is being set int the `appsettings.json` file.
 1. Set connection string to database in the `ConnectionStrings:DefaultConnection` property
 
 2. Set up AWS logging settings
-Add profile to the system with user's credeitials [More information here](https://docs.aws.amazon.com/powershell/latest/userguide/specifying-your-aws-credentials.html).
+Add profile to the system with user's credeitials [more information here](https://docs.aws.amazon.com/powershell/latest/userguide/specifying-your-aws-credentials.html).
 
 User should have `CloudWatchLogsFullAccess` permission policy.
 
@@ -59,6 +60,12 @@ Navigate to solution directory and run appropriate command:
 dotnet run --project ./MovieCatalog.AppHost/MovieCatalog.AppHost.csproj
 ```
 This will run Aspire app host containing Movie catalog Web API.
+
+## Health check
+Use this request to check if Web API is healthy:
+```bash
+GET /health
+```
 
 ## Seeding database
 Upon starting application all database migrations will be applied automatically.

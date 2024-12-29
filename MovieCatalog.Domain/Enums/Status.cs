@@ -12,5 +12,5 @@ public enum Status
 	[Description("Released")]
 	Released,
 	[Description("Cancelled")]
-	Canceled
+	Cancelled
 }
