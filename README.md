@@ -14,9 +14,7 @@ Made as a test technical assignment.
 - [Seeding database](#seeding-database)
 
 ## Requirements
-In order to run this solution you will need the following:
-- .Net 8.0 SDK installed on our system [more information here](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
-- MS SQL Server compatible database engine (not included in the solution)
+In order to run this solution you will need the following .Net 8.0 SDK installed on our system [more information here](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 
 ## Installation and building
 1. Clone the repository
