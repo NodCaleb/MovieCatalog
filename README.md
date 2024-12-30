@@ -12,6 +12,7 @@ Made as a test technical assignment.
 - [Running](#running)
 - [Health check](#health-check)
 - [Seeding database](#seeding-database)
+- [Demo](#demo)
 
 ## Requirements
 In order to run this solution you will need the following .Net 8.0 SDK installed on our system [more information here](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
@@ -66,6 +67,6 @@ It could be updated if needed, but data structure should stay the same, in case 
 
 For demo purposes app has been deployed to Azure:
 
-[https://moviecatalog-api.proudmeadow-3791c9e4.northeurope.azurecontainerapps.io/swagger] (https://moviecatalog-api.proudmeadow-3791c9e4.northeurope.azurecontainerapps.io/swagger)
+https://moviecatalog-api.proudmeadow-3791c9e4.northeurope.azurecontainerapps.io/swagger
 
 Feel fre to test in in any way.
