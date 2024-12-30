@@ -21,17 +21,14 @@ var configuration = builder.Configuration
 	.AddCommandLine(args)
 	.Build();
 
+builder.AddSqlServerDbContext<MovieCatalogDbContext>("MovieCatalog");
+
 builder.AddServiceDefaults();
 
 // Adding services to the container.
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
 builder.Logging.SetMinimumLevel(LogLevel.Information);
-
-builder.Services.AddDbContext<MovieCatalogDbContext>(options =>
-{
-	options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
-});
 
 builder.Services.AddAutoMapper(typeof(MovieMappingProfile));
 builder.Services.AddAutoMapper(typeof(MovieDataMappingProfile));

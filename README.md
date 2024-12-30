@@ -9,11 +9,9 @@ Made as a test technical assignment.
 - [Installation and building](#installation-and-building)
 - [Building](#building)
 - [Testing](#testing)
-- [Configuring](#configuring)
 - [Running](#running)
 - [Health check](#health-check)
 - [Seeding database](#seeding-database)
-- [Demo](#demo)
 
 ## Requirements
 In order to run this solution you will need the following:
@@ -39,17 +37,12 @@ In order to run tests navigate to solution directory and run test command:
 dotnet test
 ```
 
-## Configuring
-All configuration is being set int the `appsettings.json` file.
-
-Add connection string to database in the `ConnectionStrings:DefaultConnection` property.
-
 ## Running 
 Navigate to solution directory and run appropriate command:
 ```bash
 dotnet run --project ./MovieCatalog.AppHost/MovieCatalog.AppHost.csproj
 ```
-This will run Aspire app host containing Movie catalog Web API.
+This will run Aspire app host containing Movie catalog Web API and additional containers required.
 
 ## Health check
 Use this endpoint to check if Web API is healthy:
@@ -70,10 +63,3 @@ Test data is contained in the following file:
 `MovieCatalog.Infrastructure\Data\Seed\Movies.json`
 
 It could be updated if needed, but data structure should stay the same, in case of currupted data, database won't be seeded and exception will be thorown.
-
-## Demo
-Life demo of the Movie catalog API is available on AWS:
-
-[URL](URL)
-
-Feel free to try it in ay way.
