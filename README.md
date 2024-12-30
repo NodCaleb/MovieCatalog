@@ -19,7 +19,6 @@ Made as a test technical assignment.
 In order to run this solution you will need the following:
 - .Net 8.0 SDK installed on our system [more information here](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 - MS SQL Server compatible database engine (not included in the solution)
-- AWS account for logging to the AWS CloudWatch
 
 ## Installation and building
 1. Clone the repository
@@ -43,16 +42,7 @@ dotnet test
 ## Configuring
 All configuration is being set int the `appsettings.json` file.
 
-1. Set connection string to database in the `ConnectionStrings:DefaultConnection` property
-
-2. Set up AWS logging settings
-Add profile to the system with user's credeitials [more information here](https://docs.aws.amazon.com/powershell/latest/userguide/specifying-your-aws-credentials.html).
-
-User should have `CloudWatchLogsFullAccess` permission policy.
-
-Set profile name and region in `AWS` section.
-
-Set log group and region in `AWS.Logging` section.
+Add connection string to database in the `ConnectionStrings:DefaultConnection` property.
 
 ## Running 
 Navigate to solution directory and run appropriate command:
@@ -62,7 +52,7 @@ dotnet run --project ./MovieCatalog.AppHost/MovieCatalog.AppHost.csproj
 This will run Aspire app host containing Movie catalog Web API.
 
 ## Health check
-Use this request to check if Web API is healthy:
+Use this endpoint to check if Web API is healthy:
 ```bash
 GET /health
 ```
