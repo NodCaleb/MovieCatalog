@@ -12,7 +12,6 @@ Made as a test technical assignment.
 - [Running](#running)
 - [Health check](#health-check)
 - [Seeding database](#seeding-database)
-- [Demo](#demo)
 
 ## Requirements
 In order to run this solution you will need the following .Net 8.0 SDK installed on our system [more information here](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
