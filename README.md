@@ -62,11 +62,3 @@ Test data is contained in the following file:
 `MovieCatalog.Infrastructure\Data\Seed\Movies.json`
 
 It could be updated if needed, but data structure should stay the same, in case of currupted data, database won't be seeded and exception will be thorown.
-
-## Demo
-
-For demo purposes app has been deployed to Azure:
-
-https://moviecatalog-api.proudmeadow-3791c9e4.northeurope.azurecontainerapps.io/swagger
-
-Feel fre to test in in any way.
